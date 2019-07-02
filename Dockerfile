@@ -12,4 +12,4 @@ RUN npm install
 
 EXPOSE 80
 
-CMD ["pm2", "start", "/root/server.js"]
+CMD ["pm2", "start", "/root/server.js", "--no-daemon"]
