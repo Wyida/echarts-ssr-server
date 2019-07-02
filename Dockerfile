@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 LABEL maintainer="daoying007 <daoying007@gmail.com>"
 
 RUN apt-get update
-RUN apt-get install -y supervisor libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++ npm
+RUN apt-get install -y supervisor libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++ npm ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy xfonts-intl-chinese fonts-arphic-uming fonts-noto
 
 WORKDIR /root/
 ADD server.js /root/
