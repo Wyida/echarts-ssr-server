@@ -13,4 +13,4 @@ RUN npm install
 
 EXPOSE 80
 
-CMD ["pm2", "start", "/root/server.js", "--no-daemon"]
+CMD ["pm2-docker", "start", "/root/server.js"]
