@@ -2,7 +2,7 @@ var http = require('http')
 var echarts = require('node-echarts-canvas')
 var url = require('url')
 
-function processConfig (request, callback) {
+function processConfig (request, response, callback) {
   var queryData = ''
   if (typeof callback !== 'function') {
     return null
@@ -10,7 +10,7 @@ function processConfig (request, callback) {
   if (request.method === 'GET') {
     var arg = url.parse(request.url, true).query
     if (!arg.config) {
-      request.end('request parameter "config" error')
+      response.end('request parameter "config" error')
       return
     }
     request.config = arg.config
@@ -19,7 +19,7 @@ function processConfig (request, callback) {
     request.on('data', function (data) {
       queryData += data
       if (queryData.length > 1e6) {
-        request.end('request parameter "config" error')
+        response.end('request parameter "config" error')
       }
     })
     request.on('end', function () {
@@ -30,7 +30,7 @@ function processConfig (request, callback) {
 }
 
 var server = http.createServer(function (request, response) {
-  processConfig(request, function () {
+  processConfig(request, response, function () {
     var config
     try {
       config = JSON.parse(request.config)
@@ -41,6 +41,7 @@ var server = http.createServer(function (request, response) {
       response.end('request parameter "config" error')
       return
     }
+
     var buffer = echarts({
       option: config.option,
       width: config.width || 600,
