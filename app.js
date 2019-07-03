@@ -35,7 +35,6 @@ var server = http.createServer(function (request, response) {
     try {
       config = JSON.parse(request.config)
     } catch (e) {
-      console.log(e)
       response.end('request parameter "config" format invalid, is not JSON')
       return
     }
