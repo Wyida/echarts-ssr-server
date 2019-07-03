@@ -98,7 +98,7 @@ http://localhost/?config=%7B%22width%22%3A800%2C%22height%22%3A500%2C%22option%2
 ```
 
 ### 4. POST方式访问
-```
+```bash
 curl -X POST \
   http://localhost:80/ \
   -o echart-image.png \
