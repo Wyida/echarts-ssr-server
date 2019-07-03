@@ -33,7 +33,7 @@ Fedora | `sudo yum install cairo cairo-devel cairomm-devel libjpeg-turbo-devel p
 Solaris | `pkgin install cairo pango pkg-config xproto renderproto kbproto xextproto`
 Windows | [Instructions on our wiki](https://github.com/Automattic/node-canvas/wiki/Installation---Windows)
 
-#### 2. 下载并安装
+#### 2. 下载并安装
 ```bash
 git clone git@github.com:daoying007/echarts-ssr-server.git
 cd echarts-ssr-server
